@@ -6,7 +6,17 @@
 @keyframes anim
 {
 0%{transform:rotateX(-10deg) rotateY(30deg);}
-100%{transform:rotateX(-10deg) rotateY(810deg);}
+30%{transform:rotateX(-10deg) rotateY(330deg);}
+60%{transform:rotateX(360deg) rotateY(330deg);}
+100%{transform:rotateX(360deg) rotateY(720deg);}
+}
+@keyframes anim1
+{
+0%{opacity:1;}
+30%{opacity:1;}
+60%{opacity:1;}
+70%{opacity:0.3;}
+100%{opacity:0.3;}
 }
 .p
 {
@@ -31,8 +41,14 @@ position:absolute;
 height:200px;
 width:200px;
 background-color:white;
-opacity:0.3;
-border:3px solid red;
+opacity:1;
+border:3px solid yellow;
+animation-name:anim1;
+animation-duration:30s;
+animation-iteration-count:infinite;
+animation-timing-function:linear;
+animation-fill-mode:forward;
+animation-delay:1s;
 }
 .left{transform:rotatey(-90deg) translateZ(102px);}
 .right{transform:rotatey(90deg) translateZ(102px);}
@@ -43,6 +59,7 @@ border:3px solid red;
 .o2
 {
 position:relative;
+backface-visibility: visible;
 height:100px;
 width:100px;
 top:60px;
@@ -53,6 +70,7 @@ transform:rotate(45deg);
 .o2:before
 {
 position:absolute;
+backface-visibility: visible;
 content:"";
 height:100px;
 width:100px;
@@ -63,6 +81,7 @@ border-radius:50%;
 .o2:after
 {
 position:absolute;
+backface-visibility: visible;
 content:"";
 height:100px;
 width:100px;
@@ -72,6 +91,7 @@ border-radius:50%;
 }
 .text1
 {
+backface-visibility: visible;
 position:absolute;
 height:200px;
 width:200px;
@@ -82,23 +102,19 @@ font-family: 'Lobster Two', cursive;
 }
 </style>
 </head>
-<body bgcolor=black>
-<p id="mn"><font size=10px color=yellow><i></i></font><p>
+<body bgcolor=Orchid>
 <div class="p">
 <div class="p1">
-<div class="sides left"></div>
-<div class="sides right"></div>
-<div class="sides top"></div>
-<div class="sides bottom"></div>
-<div class="sides rear"></div>
-<div class="sides front"></div>
+<div class="sides left" style="background-image: url('pic1.jpg'); background-size: 101% 101%; background-repeat: no-repeat">></div>
+<div class="sides right" style="background-image: url('pic2.jpg'); background-size: 101% 101%; background-repeat: no-repeat"></div>
+<div class="sides top" style="background-image: url('pic3.jpg'); background-size: 101% 101%; background-repeat: no-repeat"></div>
+<div class="sides bottom" style="background-image: url('pic4.jpg'); background-size: 101% 101%; background-repeat: no-repeat"></div>
+<div class="sides rear" style="background-image: url('pic5.jpg'); background-size: 101% 101%; background-repeat: no-repeat"></div>
+<div class="sides front" style="background-image: url('pic6.jpg'); background-size: 101% 101%; background-repeat: no-repeat"></div>
 <div class="o2"></div>
-<div class="text1" ><br><br><h1><b><i id="yourname"></i><b></h1></div>
+<div class="text1" ><br><br><h1><b><i id="yourname">Ashraf</i><b></h1></div>
 </div>
 </div>
-<script>
-var name=prompt("Enter a name(max 8 char)"," ");
-	document.getElementById("yourname").innerHTML=name;
-</script>
+
 </body>
 </html>
